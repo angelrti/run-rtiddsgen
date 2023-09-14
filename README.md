@@ -14,6 +14,11 @@ git clone https://github.com/angelrti/run-rtiddsgen.git
 pip3 install run-rtiddsgen
 ```
 
+## Requirements
+
+This does require to have a valid and executable rtiddsgen installed in your
+computer. You may get that executable by installing RTI Connext DDS.
+
 ## Usage
 
 ```
