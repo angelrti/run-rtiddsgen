@@ -20,7 +20,7 @@ with open("README.md", "r") as readme_f:
 
 setuptools.setup(
     name="run_rtiddsgen",
-    version="0.1.0",
+    version="0.2.0",
     author="Angel Martinez",
     author_email="angel@rti.com",
     description="Run rtiddsgen for a specific set of files.",
