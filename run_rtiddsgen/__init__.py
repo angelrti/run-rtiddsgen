@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 
 import os
 import sys
@@ -169,15 +169,15 @@ class RtiCodeGenerator:
         else:
             self.dds_dcps_folder = None
 
+        # Create output folder if it doesn't exist
+        self.output = pathlib.Path(output).resolve()
+        pathlib.Path(self.output).mkdir(parents=True, exist_ok=True)
+
         if basedir is None:
             self.basedir = pathlib.Path(os.getcwd())
         else:
             self.basedir = pathlib.Path(str(basedir)).resolve()
             os.chdir(str(self.basedir))
-
-        # Create output folder if it doesn't exist
-        self.output = pathlib.Path(output).resolve()
-        pathlib.Path(self.output).mkdir(parents=True, exist_ok=True)
 
         self.language = language
         self.architecture = architecture
@@ -249,9 +249,5 @@ def main():
         "skip_files": args.skip_files,
         "dds_types": args.dds_types,
     }
-
-    # Create output directory if it doesn't exist
-    if not os.path.exists(gen_args["output"]):
-        os.mkdir(gen_args["output"])
 
     RtiCodeGenerator(**gen_args).process_files()
