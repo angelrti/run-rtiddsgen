@@ -20,7 +20,7 @@ with open("README.md", "r") as readme_f:
 
 setuptools.setup(
     name="run_rtiddsgen",
-    version="0.2.0",
+    version="0.2.1",
     author="Angel Martinez",
     author_email="angel@rti.com",
     description="Run rtiddsgen for a specific set of files.",
@@ -29,6 +29,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/angelrti/run-rtiddsgen.git",
     packages=setuptools.find_packages(),
+    package_dir={"run_rtiddsgen" : "run_rtiddsgen"},
+    package_data={"run_rtiddsgen" : ["resource/dds_dcps/dds_dcps.idl"]},
     entry_points={
         'console_scripts': [
             'run-rtiddsgen=run_rtiddsgen:main',

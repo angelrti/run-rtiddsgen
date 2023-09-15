@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 import os
 import sys
@@ -164,7 +164,7 @@ class RtiCodeGenerator:
 
         if dds_types:
             self.dds_dcps_folder = (pathlib.Path(
-                os.path.dirname(os.path.abspath(sys.argv[0]))) \
+                os.path.dirname(os.path.realpath(__file__))) \
                     / "resource" / "dds_dcps").resolve()
         else:
             self.dds_dcps_folder = None
