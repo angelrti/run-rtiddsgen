@@ -10,8 +10,7 @@ allows you to use all `rtiddsgen` options.
 Clone the repository and install it with pip:
 
 ```sh
-git clone https://github.com/angelrti/run-rtiddsgen.git
-pip3 install run-rtiddsgen
+pip3 install git+https://github.com/angelrti/run-rtiddsgen.git
 ```
 
 ## Requirements
